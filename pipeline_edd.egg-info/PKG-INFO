@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: pipeline-edd
+Version: 0.1.0
+Summary: Add your description here
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+Requires-Dist: pyspark>=3.5.0
+Requires-Dist: delta-spark>=3.0.0
+Requires-Dist: ruff>=0.1.9
+Requires-Dist: black>=23.12.1
+Requires-Dist: mypy>=1.8.0
