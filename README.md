@@ -1,8 +1,18 @@
-## Projeto Engenharia de Dados - Pipeline de Aluguel de imóveis. 🏠
+## Projeto Engenharia de Dados - Pipeline de Aluguel de Imóveis 🏠
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-Descrição do projeto
+Este projeto tem como objetivo criar um pipeline completo de dados para gerenciar, analisar e visualizar informações relacionadas ao aluguel de imóveis. A arquitetura desenvolvida permite desde a extração de dados do nosso banco de origem até o processamento, armazenamento e visualização em dashboards interativos.
+
+O foco principal é oferecer uma solução escalável e eficiente, utilizando ferramentas modernas para integrar grandes volumes de dados, garantindo a confiabilidade, segurança e acessibilidade das informações. O projeto cobre todas as etapas da engenharia de dados: ingestão, transformação, análise e apresentação, com ênfase em boas práticas e tecnologias amplamente utilizadas no mercado.
+
+Entre os casos de uso contemplados, estão:
+
+- **Análise de mercado imobiliário** para identificar tendências de preço e demanda.
+- **Monitoramento de locações e contratos** por meio de relatórios dinâmicos.
+- **Insights sobre desempenho e ocupação** de imóveis para proprietários e administradoras.
+
+A solução foi desenvolvida pensando em flexibilidade e expansibilidade, permitindo futuras integrações e escalabilidade para lidar com novos cenários e dados.
 
 ## Modelo Físico
 
@@ -12,7 +22,7 @@ Utilizamos a ferramenta de modelagem de dados MySQL Workbench para criação do 
 
 ## Dicionário de dados
 
-As informações sobre as tabelas e índices foram documentados na planilha [template imovel](https://github.com/marchingbeagle/pipeline-edd/blob/main/docs/dicionario_dados_locadora_im%C3%B3vel.xlsx).
+As informações sobre as tabelas e índices foram documentadas na planilha [template imóvel](https://github.com/marchingbeagle/pipeline-edd/blob/main/docs/dicionario_dados_locadora_im%C3%B3vel.xlsx).
 
 ## Começando
 
@@ -22,7 +32,7 @@ Consulte **[Implantação](#-implanta%C3%A7%C3%A3o)** para saber como implantar 
 
 ## Desenho de Arquitetura
 
-Coloqui uma imagem do seu projeto, como no exemplo abaixo:
+Coloque uma imagem do seu projeto, como no exemplo abaixo:
 
 ![image](https://github.com/jlsilva01/projeto-ed-satc/assets/484662/541de6ab-03fa-49b3-a29f-dec8857360c1)
 
@@ -54,11 +64,19 @@ Termine com um exemplo de como obter dados do sistema ou como usá-los para uma 
 
 ## Ferramentas utilizadas
 
-Mencione as ferramentas que você usou para criar seu projeto
+As seguintes ferramentas foram utilizadas no projeto:
 
-- Ferramenta 1 + link - Breve descrição
-- Ferramenta 2 + link - Breve descrição
-- Ferramenta 3 + link - Breve descrição
+- [PostgreSQL](https://www.postgresql.org/) - Banco de dados relacional
+- [Apache Airflow](https://airflow.apache.org/) - Gerenciador de workflows
+- [Apache Nifi](https://nifi.apache.org/) - Automação de fluxo de dados
+- [Apache Spark](https://spark.apache.org/) - Processamento distribuído de dados
+- [MinIO](https://min.io/) - Armazenamento de objetos compatível com S3
+
+Ferramentas auxiliares:
+
+- [Python](https://www.python.org/) - Linguagem de programação para desenvolvimento de scripts e análises
+- [Docker](https://www.docker.com/) - Containerização para ambientes de desenvolvimento consistentes
+- [Delta Lake](https://delta.io/) - Armazenamento de dados transacional para lakes
 
 ## Colaboração
 
@@ -79,12 +97,10 @@ Isso configurará o repositório remoto e enviará suas modificações para lá.
 
 ## Autores
 
-Mencione todos aqueles que ajudaram a levantar o projeto desde o seu início
-
-- **Aluno 1** - [(https://github.com/marchingbeagle)](https://github.com/marchingbeagle)
-- **Aluno 2** - [https://github.com/GabrielWDuarte](https://github.com/GabrielWDuarte)
-- **Aluno 3** - [https://github.com/dauaneneves](https://github.com/dauaneneves)
-- **Aluno 4** - [https://github.com/gabrieldorodrigues](https://github.com/gabrieldorodrigues)
+- **Erik Schneider** - [(https://github.com/marchingbeagle)](https://github.com/marchingbeagle)
+- **Gabriel William** - [https://github.com/GabrielWDuarte](https://github.com/GabrielWDuarte)
+- **Dauane Neves** - [https://github.com/dauaneneves](https://github.com/dauaneneves)
+- **Gabriel Rodrigues** - [https://github.com/gabrieldorodrigues](https://github.com/gabrieldorodrigues)
 
 Você também pode ver a lista de todos os [colaboradores](https://github.com/marchingbeagle/pipeline-edd/graphs/contributors) que participaram deste projeto.
 
