@@ -1,17 +1,13 @@
-# Welcome to MkDocs
+# Projeto Engenharia de Dados - Pipeline de Aluguel de Imóveis 🏠
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Este projeto tem como objetivo criar um pipeline completo de dados para gerenciar, analisar e visualizar informações relacionadas ao aluguel de imóveis. A arquitetura desenvolvida permite desde a extração de dados do nosso banco de origem até o processamento, armazenamento e visualização em dashboards interativos.
 
-## Commands
+O foco principal é oferecer uma solução escalável e eficiente, utilizando ferramentas modernas para integrar grandes volumes de dados, garantindo a confiabilidade, segurança e acessibilidade das informações. O projeto cobre todas as etapas da engenharia de dados: ingestão, transformação, análise e apresentação, com ênfase em boas práticas e tecnologias amplamente utilizadas no mercado.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+Entre os casos de uso contemplados, estão:
 
-## Project layout
+- **Análise de mercado imobiliário** para identificar tendências de preço e demanda.
+- **Monitoramento de locações e contratos** por meio de relatórios dinâmicos.
+- **Insights sobre desempenho e ocupação** de imóveis para proprietários e administradoras.
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+A solução foi desenvolvida pensando em flexibilidade e expansibilidade, permitindo futuras integrações e escalabilidade para lidar com novos cenários e dados.
