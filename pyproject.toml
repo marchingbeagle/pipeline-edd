@@ -9,5 +9,15 @@ dependencies = [
     "delta-spark>=3.0.0",
     "ruff>=0.1.9",
     "black>=23.12.1",
-    "mypy>=1.8.0"
+    "mypy>=1.8.0",
+    "faker>=33.0.0",
+    "pandas>=2.2.3",
 ]
+
+[dependency-groups]
+dev = [
+    "pipeline-edd",
+]
+
+[tool.uv.sources]
+pipeline-edd = { workspace = true }
