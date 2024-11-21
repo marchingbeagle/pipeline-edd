@@ -11,4 +11,5 @@ dependencies = [
     "black>=23.12.1",
     "mypy>=1.8.0",
     "mkdocs>=1.6.1",
+    "mkdocs-material>=9.5.45",
 ]

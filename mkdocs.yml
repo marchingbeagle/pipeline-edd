@@ -12,7 +12,7 @@ nav:
   - Autores: autores.md
   - Licença: licenca.md
 theme:
-  name: readthedocs
+  name: material
   language: pt
   palette:
     primary: 'blue'
