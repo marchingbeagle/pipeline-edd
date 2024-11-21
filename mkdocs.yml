@@ -19,4 +19,4 @@ theme:
     accent: 'light-blue'
 markdown_extensions:
   - toc:
-      permalink: trueg
+      permalink: true
