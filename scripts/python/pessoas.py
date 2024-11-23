@@ -12,7 +12,7 @@ telefone = []
 sexo = []
 
 for i in range(10000):
-    idpessoas.append(fake.uuid4())  
+    idpessoas.append(fake.random.randint(1, 99999)) 
     nome.append(fake.name())        
     cpf.append(fake.cpf())          
     data_nascimento.append(fake.date_of_birth())  

@@ -15,10 +15,10 @@ def random_date_within_3_years():
     start_date = end_date - timedelta(days=3 * 365)
     return fake.date_between(start_date=start_date, end_date=end_date)
 
-for i in range(5):
-    idcategoria.append(fake.uuid4()) 
-    nome.append(fake.word())          
-    descricao.append(fake.text(max_nb_chars=50))  
+for i in range(10000):
+    idcategoria.append(fake.random.randint(1, 99999))
+    nome.append(fake.random.choice(['alugado', 'reservado', 'disponível']))    
+    descricao.append(fake.text(max_nb_chars=30))  
     data_criacao.append(random_date_within_3_years()) 
     data_atualizacao.append(random_date_within_3_years())  
 
@@ -34,4 +34,4 @@ df = pd.DataFrame(
 
 print(df)
 
-#df.to_csv('./CATEGORIA.CSV', index=False)
+df.to_csv('./CATEGORIA.CSV', index=False)

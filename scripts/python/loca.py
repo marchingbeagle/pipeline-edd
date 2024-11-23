@@ -1,5 +1,6 @@
 from faker import Faker
 import pandas as pd
+from datetime import datetime, timedelta
 
 fake = Faker(locale='pt-BR')
 
@@ -11,14 +12,19 @@ localizacao = []
 corretor = []
 imovel = []
 
+def random_date_within_3_years():
+    end_date = datetime.now()
+    start_date = end_date - timedelta(days=3 * 365)
+    return fake.date_between(start_date=start_date, end_date=end_date)
+
 for i in range(10000):
-    idlocacao.append(fake.uuid4())                      
+    idlocacao.append(fake.random.randint(1, 99999))                      
     inquilino.append(fake.name())                      
     valor_contrato.append(fake.random_int(1000, 20000))
-    vigencia.append(fake.date_this_year())             
+    vigencia.append(random_date_within_3_years())             
     localizacao.append(fake.address())                 
     corretor.append(fake.name())                       
-    imovel.append(fake.uuid4())                        
+    imovel.append(fake.random.randint(1, 99999))                       
 
 df = pd.DataFrame(
     {

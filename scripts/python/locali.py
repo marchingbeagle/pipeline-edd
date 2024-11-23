@@ -12,13 +12,13 @@ cidade = []
 categoria = []
 
 for i in range(10000):
-    idlocalizacao.append(fake.uuid4())            
+    idlocalizacao.append(fake.random.randint(1, 99999))           
     cep.append(fake.postcode())                  
-    numero_imovel.append(fake.building_number()) 
+    numero_imovel.append(fake.random.randint(1, 9999))
     complemento.append(fake.random_element(['Apto', 'Casa', 'Bloco', 'Edifício'])) 
-    referencia.append(fake.sentence(nb_words=6))
+    referencia.append(fake.sentence(nb_words=2))
     cidade.append(fake.city())                 
-    categoria.append(fake.word())             
+    categoria.append(fake.random.choice(['alugado', 'reservado', 'disponível']))             
 
 df = pd.DataFrame(
     {

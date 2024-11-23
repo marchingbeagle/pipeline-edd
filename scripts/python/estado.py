@@ -8,7 +8,7 @@ nome_estado = []
 sigla_estado = []
 
 for i in range(10000):
-    idestado.append(fake.uuid4())                    
+    idestado.append(fake.random.randint(1, 99999))                    
     nome_estado.append(fake.state())                
     sigla_estado.append(fake.state_abbr())          
 

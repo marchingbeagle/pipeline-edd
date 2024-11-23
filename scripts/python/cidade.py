@@ -8,7 +8,7 @@ nome = []
 estado = []
 
 for i in range(10000):
-    idcidade.append(fake.uuid4())       
+    idcidade.append(fake.random.randint(1, 99999))       
     nome.append(fake.city())            
     estado.append(fake.state())         
 

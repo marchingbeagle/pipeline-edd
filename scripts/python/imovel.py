@@ -10,7 +10,7 @@ preco_compra = []
 preco_aluguel = []
 
 for i in range(10000):
-    idimovel.append(fake.uuid4())                  
+    idimovel.append(fake.random.randint(1, 99999))                
     localizacao.append(fake.address())             
     proprietario.append(fake.name())               
     preco_compra.append(fake.random_int(50000, 1000000))
