@@ -12,6 +12,8 @@ dependencies = [
     "mypy>=1.8.0",
     "faker>=33.0.0",
     "pandas>=2.2.3",
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.5.45",
 ]
 
 [dependency-groups]

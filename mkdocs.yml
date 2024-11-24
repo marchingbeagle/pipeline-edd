@@ -1,0 +1,22 @@
+site_name: Projeto Engenharia de Dados - Pipeline de Aluguel de Imóveis
+nav:
+  - Home: index.md
+  - Modelo Físico: modelo_fisico.md
+  - Dicionário de Dados: dicionario_dados.md
+  - Começando: comecando.md
+  - Desenho de Arquitetura: arquitetura.md
+  - Pré-requisitos: prerequisitos.md
+  - Instalação: instalacao.md
+  - Ferramentas: ferramentas.md
+  - Colaboração: colaboracao.md
+  - Autores: autores.md
+  - Licença: licenca.md
+theme:
+  name: material
+  language: pt
+  palette:
+    primary: 'blue'
+    accent: 'light-blue'
+markdown_extensions:
+  - toc:
+      permalink: true
