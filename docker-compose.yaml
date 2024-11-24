@@ -1,0 +1,75 @@
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=airflow
+      - POSTGRES_PASSWORD=airflow
+      - POSTGRES_DB=airflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  minio:
+    image: minio/minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      - MINIO_ROOT_USER=minio
+      - MINIO_ROOT_PASSWORD=minio123
+    command: server --console-address ":9001" /data
+    volumes:
+      - minio_data:/data
+
+  airflow-webserver:
+    image: apache/airflow:2.7.1
+    depends_on:
+      - postgres
+    environment:
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+    ports:
+      - "8080:8080"
+    command: webserver
+
+  airflow-scheduler:
+    image: apache/airflow:2.7.1
+    depends_on:
+      - postgres
+    environment:
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+    command: scheduler
+
+  spark-master:
+    image: bitnami/spark:3.4
+    environment:
+      - SPARK_MODE=master
+    ports:
+      - "8181:8080"
+      - "7077:7077"
+    volumes:
+      - ./spark-apps:/opt/spark-apps
+      - ./spark-data:/opt/spark-data
+
+  spark-worker:
+    image: bitnami/spark:3.4
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+    depends_on:
+      - spark-master
+    volumes:
+      - ./spark-apps:/opt/spark-apps
+      - ./spark-data:/opt/spark-data
+
+volumes:
+  postgres_data:
+  minio_data:
