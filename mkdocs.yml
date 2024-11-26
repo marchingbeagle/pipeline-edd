@@ -15,8 +15,8 @@ theme:
   name: material
   language: pt
   palette:
-    primary: 'blue'
-    accent: 'light-blue'
+    primary: "green"
+    accent: "light-blue"
 markdown_extensions:
   - toc:
       permalink: true
