@@ -3,13 +3,22 @@ from airflow import DAG
 from airflow.operators.dummy_operator import DummyOperator
 from airflow.contrib.operators.spark_submit_operator import SparkSubmitOperator
 from datetime import datetime, timedelta
+from airflow.operators.postgres_operator import PostgresOperator
 
 spark_conn = os.environ.get("spark_conn", "spark_conn")
 spark_master = "spark://spark:7077"
 postgres_driver_jar = "/usr/local/spark/assets/jars/postgresql-42.2.6.jar"
 
-movies_file = "/usr/local/spark/assets/data/movies.csv"
-ratings_file = "/usr/local/spark/assets/data/ratings.csv"
+with open("/usr/local/spark/assets/script/sql/ddl.sql", "r") as file:
+    ddl_sql = file.read()
+
+categoria_file = "/usr/local/spark/assets/data/CATEGORIA.csv"
+cidade_file = "/usr/local/spark/assets/data/CIDADE.csv"
+estado_file = "/usr/local/spark/assets/data/ESTADO.csv"
+imovel_file = "/usr/local/spark/assets/data/IMOVEL.csv"
+locacao_file = "/usr/local/spark/assets/data/LOCACAO.csv"
+localizacao_file = "/usr/local/spark/assets/data/LOCALIZACAO.csv"
+pessoas_file = "/usr/local/spark/assets/data/PESSOAS.csv"
 postgres_db = "jdbc:postgresql://postgres:5432/airflow"
 postgres_user = "airflow"
 postgres_pwd = "airflow"
@@ -43,24 +52,19 @@ spark_job_load_postgres = SparkSubmitOperator(
     conn_id="spark_conn",
     verbose=1,
     conf={"spark.master": spark_master},
-    application_args=[movies_file, ratings_file,
+    application_args=[categoria_file, cidade_file, estado_file, imovel_file,
+                      locacao_file, localizacao_file, pessoas_file,
                       postgres_db, postgres_user, postgres_pwd],
     jars=postgres_driver_jar,
     driver_class_path=postgres_driver_jar,
     dag=dag)
 
-spark_job_read_postgres = SparkSubmitOperator(
-    task_id="spark_job_read_postgres",
-    application="/usr/local/spark/applications/read-postgres.py",
-    name="read-postgres",
-    conn_id="spark_conn",
-    verbose=1,
-    conf={"spark.master": spark_master},
-    application_args=[postgres_db, postgres_user, postgres_pwd],
-    jars=postgres_driver_jar,
-    driver_class_path=postgres_driver_jar,
+create_tables = PostgresOperator(
+    task_id="create_tables",
+    postgres_conn_id="postgres_conn", 
+    sql=ddl_sql,  
     dag=dag)
 
 end = DummyOperator(task_id="end", dag=dag)
 
-start >> spark_job_load_postgres >> spark_job_read_postgres >> end
+start >> create_tables >> spark_job_load_postgres >> end
