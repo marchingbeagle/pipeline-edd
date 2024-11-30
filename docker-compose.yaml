@@ -89,11 +89,17 @@ services:
     entrypoint: >
       /bin/sh -c "
       /usr/bin/mc config host add myminio http://bucket:9000 airflow airflowairflow;
-      /usr/bin/mc rm -r --force myminio/airflow;
-      /usr/bin/mc mb myminio/airflow;
-      /usr/bin/mc policy download myminio/airflow;
+      /usr/bin/mc mb myminio/landing;
+      /usr/bin/mc mb myminio/bronze;
+      /usr/bin/mc mb myminio/silver;
+      /usr/bin/mc mb myminio/gold;
+      /usr/bin/mc policy set public myminio/landing;
+      /usr/bin/mc policy set private myminio/bronze;
+      /usr/bin/mc policy set private myminio/silver;
+      /usr/bin/mc policy set private myminio/gold;
       exit 0;
       "
+      
   spark-master:
     image: bitnami/spark:3.2.1
     # https://docs.bitnami.com/tutorials/work-with-non-root-containers/
