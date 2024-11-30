@@ -50,13 +50,16 @@ spark_job_load_postgres = SparkSubmitOperator(
     application="/usr/local/spark/applications/load-postgres.py",
     name="load-postgres",
     conn_id="spark_conn",
-    verbose=1,
-    conf={"spark.master": spark_master},
+    verbose=True,
+    conf={
+        "spark.master": spark_master,
+        "spark.driver.extraClassPath": postgres_driver_jar,
+        "spark.executor.extraClassPath": postgres_driver_jar
+    },
     application_args=[categoria_file, cidade_file, estado_file, imovel_file,
                       locacao_file, localizacao_file, pessoas_file,
                       postgres_db, postgres_user, postgres_pwd],
     jars=postgres_driver_jar,
-    driver_class_path=postgres_driver_jar,
     dag=dag)
 
 create_tables = PostgresOperator(
