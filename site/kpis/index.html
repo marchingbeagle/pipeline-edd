@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../prerequisitos/">
-      
-      
-        <link rel="next" href="../licenca/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>Colaboração - Projeto Engenharia de Dados - Pipeline de Aluguel de Imóveis</title>
+        <title>Dashboard - KPIs e Métricas - Projeto Engenharia de Dados - Pipeline de Aluguel de Imóveis</title>
       
     
     
@@ -70,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#colaboracao" class="md-skip">
+        <a href="#dashboard-kpis-e-metricas" class="md-skip">
           Ir para o conteúdo
         </a>
       
@@ -106,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Colaboração
+              Dashboard - KPIs e Métricas
             
           </span>
         </div>
@@ -356,19 +352,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../colaboracao/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -377,7 +364,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -442,6 +428,74 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kpis" class="md-nav__link">
+    <span class="md-ellipsis">
+      KPIs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metricas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métricas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kpis_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      KPIs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metricas_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métricas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Métricas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#valor-medio-por-metro-quadrado-aluguel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Valor Médio por Metro Quadrado (Aluguel)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variacao-mensal-do-valor-medio-de-aluguel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variação Mensal do Valor Médio de Aluguel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -455,18 +509,106 @@
                   
 
 
-<h1 id="colaboracao">Colaboração<a class="headerlink" href="#colaboracao" title="Permanent link">&para;</a></h1>
-<p>Se desejar publicar suas modificações em um repositório remoto no GitHub, siga estes passos:</p>
+<h1 id="dashboard-kpis-e-metricas">Dashboard - KPIs e Métricas<a class="headerlink" href="#dashboard-kpis-e-metricas" title="Permanent link">&para;</a></h1>
+<h3 id="kpis">KPIs<a class="headerlink" href="#kpis" title="Permanent link">&para;</a></h3>
+<p>Os <strong>KPIs (Key Performance Indicators)</strong> são indicadores de alto nível que permitem monitorar o desempenho geral das locações e imóveis:
+1. <strong>Receita Total de Locações:</strong> Soma de todos os valores dos contratos de locação realizados.
+2. <strong>Imóveis Alugados por Cidade:</strong> Quantidade de imóveis alugados agrupados por cada cidade.
+3. <strong>Taxa de Ocupação:</strong> Percentual de imóveis alugados em relação ao total de imóveis cadastrados.
+4. <strong>Duração Média dos Contratos:</strong> Média do tempo de vigência dos contratos de locação em meses.</p>
+<h3 id="metricas">Métricas<a class="headerlink" href="#metricas" title="Permanent link">&para;</a></h3>
+<p>As <strong>Métricas</strong> oferecem análises mais detalhadas e específicas dos dados:
+1. <strong>Valor Médio por Metro Quadrado (Aluguel):</strong> Mede o preço médio de aluguel por metro quadrado, agrupado por cidade ou estado.
+2. <strong>Variação Mensal do Valor Médio de Aluguel:</strong> Mostra como o preço médio de aluguel muda mês a mês, destacando tendências no mercado.</p>
+<hr />
+<h2 id="kpis_1">KPIs<a class="headerlink" href="#kpis_1" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Crie um novo repositório vazio no GitHub.</li>
-<li>No terminal, navegue até o diretório raiz do projeto.</li>
-<li>Execute os seguintes comandos:</li>
+<li><strong>Receita Total de Locações:</strong> R$ 318,275.00</li>
+<li><strong>Imóveis Alugados por Cidade:</strong></li>
 </ol>
-<p>```bash
-git remote set-url origin https://github.com/seu-usuario/nome-do-novo-repositorio.git
-git add .
-git commit -m "Adicionar minhas modificações"
-git push -u origin master</p>
+<table>
+<thead>
+<tr>
+<th>Nome da Cidade</th>
+<th>Quantidade de Locações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Barros (AC)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Pinto das Flores (AP)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Cassiano da Mata (GO)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Rodrigues de Pimenta (PA)</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><strong>Taxa de Ocupação:</strong> 66.67%</li>
+<li><strong>Duração Média dos Contratos:</strong> 2.50 meses</li>
+</ol>
+<hr />
+<h2 id="metricas_1">Métricas<a class="headerlink" href="#metricas_1" title="Permanent link">&para;</a></h2>
+<h3 id="valor-medio-por-metro-quadrado-aluguel">Valor Médio por Metro Quadrado (Aluguel)<a class="headerlink" href="#valor-medio-por-metro-quadrado-aluguel" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Sigla do Estado</th>
+<th>Preço Médio de Aluguel por m²</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SP</td>
+<td>R$ 35.00</td>
+</tr>
+<tr>
+<td>RJ</td>
+<td>R$ 40.00</td>
+</tr>
+<tr>
+<td>MG</td>
+<td>R$ 32.00</td>
+</tr>
+</tbody>
+</table>
+<h3 id="variacao-mensal-do-valor-medio-de-aluguel">Variação Mensal do Valor Médio de Aluguel<a class="headerlink" href="#variacao-mensal-do-valor-medio-de-aluguel" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Mês</th>
+<th>Variação Mensal (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2023-01</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2023-02</td>
+<td>5.00%</td>
+</tr>
+<tr>
+<td>2023-03</td>
+<td>10.00%</td>
+</tr>
+<tr>
+<td>2023-04</td>
+<td>8.00%</td>
+</tr>
+</tbody>
+</table>
+<hr />
 
 
 
