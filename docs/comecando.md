@@ -1,5 +1,5 @@
-# Começando
+# 📋 Início  
 
-Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
+Estas instruções permitirão que você configure e execute o projeto localmente para desenvolvimento e testes. Consulte o guia de [Implantação](instalacao.md) para detalhes sobre como implantar o projeto.
 
-Consulte [Implantação](instalacao.md) para saber como implantar o projeto.
+
