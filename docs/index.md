@@ -10,4 +10,4 @@ Entre os casos de uso contemplados, estão:
 - **Monitoramento de locações e contratos** por meio de relatórios dinâmicos.
 - **Insights sobre desempenho e ocupação** de imóveis para proprietários e administradoras.
 
-A solução foi desenvolvida pensando em flexibilidade e expansibilidade, permitindo futuras integrações e escalabilidade para lidar com novos cenários e dados.
+A solução foi desenvolvida pensando em flexibilidade e expansibilidade, permitindo futuras integrações e escalabilidade para lidar com novos cenários e dados. A estrutura do projeto foi projetada para ser flexível e expansível, permitindo integrações futuras e escalabilidade para novos cenários de dados.

@@ -3,7 +3,6 @@ nav:
   - Home: index.md
   - Modelo Físico: modelo_fisico.md
   - Dicionário de Dados: dicionario_dados.md
-  - Começando: comecando.md
   - Desenho de Arquitetura: arquitetura.md
   - Pré-requisitos: prerequisitos.md
   - Instalação: instalacao.md
@@ -15,7 +14,7 @@ theme:
   name: material
   language: pt
   palette:
-    primary: "green"
+    primary: "blue"
     accent: "light-blue"
 markdown_extensions:
   - toc:

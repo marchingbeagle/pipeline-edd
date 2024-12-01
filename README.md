@@ -34,33 +34,48 @@ Consulte **[Implantação](#-implanta%C3%A7%C3%A3o)** para saber como implantar 
 
 Coloque uma imagem do seu projeto, como no exemplo abaixo:
 
-![image](https://github.com/jlsilva01/projeto-ed-satc/assets/484662/541de6ab-03fa-49b3-a29f-dec8857360c1)
+![Desenho de Arquitetura](assets/imgs//Desenho%20de%20Arquitetura.png)
 
-## Pré-requisitos
+## 🔧 Pré-requisitos
 
-De que coisas você precisa para instalar o software e como instalá-lo?
+Para executar o projeto, você precisa ter os seguintes softwares instalados na sua máquina:
 
-```
-Dar exemplos
-```
+- Docker: Ferramenta para criar e gerenciar containers.
+- Docker Compose: Ferramenta para definir e rodar aplicações com múltiplos containers.
 
-## Instalação
+## 🐳 Configurações Docker  
 
-Uma série de exemplos passo-a-passo que informam o que você deve executar para ter um ambiente de desenvolvimento em execução.
-
-Diga como essa etapa será:
-
-```
-Dar exemplos
-```
-
-E repita:
-
-```
-Até finalizar
+### **Portainer (Opcional)**  
+```bash
+docker volume create portainer_data2
+docker run -d -p 8000:8000 -p 9443:9443 --name portainer2 --restart=always \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v portainer_data2:/data \
+  portainer/portainer-ce:2.21.4
 ```
 
-Termine com um exemplo de como obter dados do sistema ou como usá-los para uma pequena demonstração.
+### **Subir Docker-Compose**  
+```bash
+docker compose -f docker-compose.yaml up -d
+```
+
+### **Criar Usuário no Airflow**  
+```bash
+docker compose run airflow-webserver airflow users create --role Admin \
+  --username airflow --email airflow@example.com \
+  --firstname airflow --lastname airflow --password airflow
+```
+
+---
+
+## 🌐 Conexões
+
+|        Application        |URL                          |Credentials                         |
+|----------------|-------------------------------|-----------------------------|
+|Airflow| [http://localhost:8085](http://localhost:8085) | ``` User: airflow``` <br> ``` Pass: airflow``` |         |
+|MinIO| [http://localhost:9001](http://localhost:9001) | ``` User: airflow``` <br> ``` Pass: airflowairflow``` |           |
+|Postgres| **Server/Database:** localhost:5432/airflow | ``` User: airflow``` <br> ``` Pass: airflow``` |           |
+|Spark (Master) | [http://localhost:8081](http://localhost:8081)|  |         |
 
 ## Ferramentas utilizadas
 
@@ -68,7 +83,6 @@ As seguintes ferramentas foram utilizadas no projeto:
 
 - [PostgreSQL](https://www.postgresql.org/) - Banco de dados relacional
 - [Apache Airflow](https://airflow.apache.org/) - Gerenciador de workflows
-- [Apache Nifi](https://nifi.apache.org/) - Automação de fluxo de dados
 - [Apache Spark](https://spark.apache.org/) - Processamento distribuído de dados
 - [MinIO](https://min.io/) - Armazenamento de objetos compatível com S3
 
