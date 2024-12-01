@@ -1,8 +1,0 @@
-README.md
-hello.py
-pyproject.toml
-pipeline_edd.egg-info/PKG-INFO
-pipeline_edd.egg-info/SOURCES.txt
-pipeline_edd.egg-info/dependency_links.txt
-pipeline_edd.egg-info/requires.txt
-pipeline_edd.egg-info/top_level.txt
