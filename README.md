@@ -18,8 +18,8 @@ A solução foi desenvolvida pensando em flexibilidade e expansibilidade, permit
 
 Utilizamos a ferramenta de modelagem de dados MySQL Workbench para criação do modelo físico do banco de dados, para posterior exportação dos scripts DDL das tabelas e relacionamentos.<br>
 
-![Modelo Físico](![image](https://github.com/user-attachments/assets/2009e741-0fd4-4612-be37-766dabb12cff)
-)
+![Modelo Físico](https://github.com/user-attachments/assets/2009e741-0fd4-4612-be37-766dabb12cff)
+
 
 ## Dicionário de dados
 
