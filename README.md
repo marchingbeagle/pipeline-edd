@@ -33,8 +33,6 @@ Consulte **[Implantação](#-implanta%C3%A7%C3%A3o)** para saber como implantar 
 
 ## Desenho de Arquitetura
 
-Coloque uma imagem do seu projeto, como no exemplo abaixo:
-
 ![Desenho de Arquitetura](https://github.com/user-attachments/assets/7c145088-6852-4cad-b004-b6c86e529266)
 
 ## 🔧 Pré-requisitos
@@ -122,3 +120,7 @@ Você também pode ver a lista de todos os [colaboradores](https://github.com/ma
 ## Licença
 
 Este projeto está sob a licença (sua licença) - veja o arquivo [LICENSE](https://github.com/marchingbeagle/pipeline-edd/blob/main/LICENSE) para detalhes.
+
+## Referências
+
+https://github.com/andrejnevesjr/airflow-spark-minio-postgres.git
