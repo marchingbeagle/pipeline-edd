@@ -18,7 +18,9 @@ A solução foi desenvolvida pensando em flexibilidade e expansibilidade, permit
 
 Utilizamos a ferramenta de modelagem de dados MySQL Workbench para criação do modelo físico do banco de dados, para posterior exportação dos scripts DDL das tabelas e relacionamentos.<br>
 
-![Captura de tela 2023-12-05 122332](https://github.com/marchingbeagle/projeto-final-bd2-aluguel-imoveis/blob/main/assets/modelo_fisico.png)
+https://github.com/user-attachments/assets/886550fb-8b01-4782-b6fd-e80e48954cb5
+
+![Modelo Físico](https://github.com/user-attachments/assets/886550fb-8b01-4782-b6fd-e80e48954cb5)
 
 ## Dicionário de dados
 
@@ -32,9 +34,7 @@ Consulte **[Implantação](#-implanta%C3%A7%C3%A3o)** para saber como implantar 
 
 ## Desenho de Arquitetura
 
-Coloque uma imagem do seu projeto, como no exemplo abaixo:
-
-![Desenho de Arquitetura](assets/imgs//Desenho%20de%20Arquitetura.png)
+![Desenho de Arquitetura](https://github.com/user-attachments/assets/78f13c8c-9156-4645-b8c9-5dd5d657a114)
 
 ## 🔧 Pré-requisitos
 
