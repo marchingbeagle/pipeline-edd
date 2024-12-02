@@ -35,7 +35,7 @@ Consulte **[Implantação](#-implanta%C3%A7%C3%A3o)** para saber como implantar 
 
 Coloque uma imagem do seu projeto, como no exemplo abaixo:
 
-![Desenho de Arquitetura](https://github.com/user-attachments/assets/824305ec-31e8-4f3b-afff-c9f692957521)
+![Desenho de Arquitetura](https://github.com/user-attachments/assets/7c145088-6852-4cad-b004-b6c86e529266)
 
 ## 🔧 Pré-requisitos
 
