@@ -3,7 +3,7 @@ name = "pipeline-edd"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.11"
 dependencies = [
     "pyspark>=3.5.0",
     "delta-spark>=3.0.0",
@@ -12,11 +12,11 @@ dependencies = [
     "mypy>=1.8.0",
     "faker>=33.0.0",
     "pandas>=2.2.3",
-    "mkdocs>=1.6.1",
-    "mkdocs-material>=9.5.45",
     "apache-airflow>=2.7.0",
     "apache-airflow-providers-amazon>=8.0.0",
-    "requests>=2.31.0"
+    "requests>=2.31.0",
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.0.0"
 ]
 
 [dependency-groups]
