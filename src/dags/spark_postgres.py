@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 from airflow.operators.postgres_operator import PostgresOperator
 
 spark_conn = os.environ.get("spark_conn", "spark_conn")
-spark_master = "spark://spark:7077"  # Make sure this matches your Spark master URL
+spark_master = "spark://spark:7077"  
 postgres_driver_jar = "/usr/local/spark/assets/jars/postgresql-42.2.6.jar"
 
 with open("/usr/local/spark/assets/script/sql/ddl.sql", "r") as file:
@@ -47,7 +47,7 @@ start = DummyOperator(task_id="start", dag=dag)
 
 spark_job_load_postgres = SparkSubmitOperator(
     task_id="spark_job_load_postgres",
-    application="/usr/local/spark/applications/load-postgres.py",
+    application="/usr/local/spark/applications/load_postgres.py",
     name="load-postgres",
     conn_id=spark_conn,
     verbose=True,

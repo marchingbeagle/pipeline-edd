@@ -3,11 +3,10 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import from_unixtime, col, to_timestamp
 from pyspark.sql.types import DoubleType
 
-# Create spark session
 spark = (SparkSession
          .builder
-         .master("spark://spark:7077")  # Add explicit master URL
-         .appName("load-postgres")      # Add application name
+         .master("spark://spark:7077")  
+         .appName("load-postgres")      
          .config("spark.jars", "/usr/local/spark/assets/jars/postgresql-42.2.6.jar")
          .getOrCreate()
          )

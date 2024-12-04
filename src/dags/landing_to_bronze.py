@@ -4,14 +4,8 @@ from airflow.operators.dummy_operator import DummyOperator
 from airflow.contrib.operators.spark_submit_operator import SparkSubmitOperator
 from datetime import datetime, timedelta
 
-# Get Spark connection from environment
 spark_conn = os.environ.get("spark_conn", "spark_conn")
 spark_master = "spark://spark:7077"
-
-# Database connection info
-postgres_db = "jdbc:postgresql://postgres:5432/airflow"
-postgres_user = "airflow"
-postgres_pwd = "airflow"
 
 default_args = {
     'owner': 'airflow',
@@ -24,9 +18,9 @@ default_args = {
 }
 
 dag = DAG(
-    'postgres_to_minio_delta',
+    'landing_to_bronze',
     default_args=default_args,
-    description='Copy data from Postgres to MinIO in Delta format',
+    description='Process data from landing to bronze layer',
     schedule_interval='@daily',
     catchup=False
 )
@@ -36,15 +30,15 @@ start = DummyOperator(
     dag=dag
 )
 
-postgres_to_minio = SparkSubmitOperator(
-    task_id='postgres_to_minio',
-    application='/usr/local/spark/applications/postgres_to_minio.py',
-    name='postgres_to_minio',
+landing_to_bronze = SparkSubmitOperator(
+    task_id='landing_to_bronze',
+    application='/usr/local/spark/applications/landing_to_bronze.py', 
+    name='landing_to_bronze',
     conn_id=spark_conn,
     verbose=True,
     conf={
         "spark.master": spark_master,
-        "spark.jars.packages": "io.delta:delta-core_2.12:1.0.0,org.apache.hadoop:hadoop-aws:3.2.0,com.amazonaws:aws-java-sdk-bundle:1.11.563,org.postgresql:postgresql:42.2.6",
+        "spark.jars.packages": "io.delta:delta-core_2.12:1.0.0,org.apache.hadoop:hadoop-aws:3.2.0",
         "spark.sql.extensions": "io.delta.sql.DeltaSparkSessionExtension",
         "spark.sql.catalog.spark_catalog": "org.apache.spark.sql.delta.catalog.DeltaCatalog",
         "spark.hadoop.fs.s3a.endpoint": "http://bucket:9000",
@@ -53,7 +47,6 @@ postgres_to_minio = SparkSubmitOperator(
         "spark.hadoop.fs.s3a.path.style.access": "true",
         "spark.hadoop.fs.s3a.impl": "org.apache.hadoop.fs.s3a.S3AFileSystem"
     },
-    application_args=[postgres_db, postgres_user, postgres_pwd],
     dag=dag
 )
 
@@ -62,4 +55,4 @@ end = DummyOperator(
     dag=dag
 )
 
-start >> postgres_to_minio >> end
+start >> landing_to_bronze >> end
