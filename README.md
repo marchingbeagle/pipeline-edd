@@ -18,7 +18,8 @@ A solução foi desenvolvida pensando em flexibilidade e expansibilidade, permit
 
 Utilizamos a ferramenta de modelagem de dados MySQL Workbench para criação do modelo físico do banco de dados, para posterior exportação dos scripts DDL das tabelas e relacionamentos.<br>
 
-![Captura de tela 2023-12-05 122332](https://github.com/marchingbeagle/projeto-final-bd2-aluguel-imoveis/blob/main/assets/modelo_fisico.png)
+![Modelo Físico](https://github.com/user-attachments/assets/2009e741-0fd4-4612-be37-766dabb12cff)
+
 
 ## Dicionário de dados
 
@@ -28,39 +29,52 @@ As informações sobre as tabelas e índices foram documentadas na planilha [tem
 
 Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
 
-Consulte **[Implantação](#-implanta%C3%A7%C3%A3o)** para saber como implantar o projeto.
+Consulte [Instalação](https://github.com/marchingbeagle/pipeline-edd/blob/main/docs/instalacao.md). para saber como implantar o projeto.
 
 ## Desenho de Arquitetura
 
-Coloque uma imagem do seu projeto, como no exemplo abaixo:
+![Desenho de Arquitetura](https://github.com/user-attachments/assets/7c145088-6852-4cad-b004-b6c86e529266)
 
-![image](https://github.com/jlsilva01/projeto-ed-satc/assets/484662/541de6ab-03fa-49b3-a29f-dec8857360c1)
+## 🔧 Pré-requisitos
 
-## Pré-requisitos
+Para executar o projeto, você precisa ter os seguintes softwares instalados na sua máquina:
 
-De que coisas você precisa para instalar o software e como instalá-lo?
+- Docker: Ferramenta para criar e gerenciar containers.
+- Docker Compose: Ferramenta para definir e rodar aplicações com múltiplos containers.
 
-```
-Dar exemplos
-```
+## 🐳 Configurações Docker  
 
-## Instalação
-
-Uma série de exemplos passo-a-passo que informam o que você deve executar para ter um ambiente de desenvolvimento em execução.
-
-Diga como essa etapa será:
-
-```
-Dar exemplos
+### **Portainer (Opcional)**  
+```bash
+docker volume create portainer_data2
+docker run -d -p 8000:8000 -p 9443:9443 --name portainer2 --restart=always \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v portainer_data2:/data \
+  portainer/portainer-ce:2.21.4
 ```
 
-E repita:
-
+### **Subir Docker-Compose**  
+```bash
+docker compose -f docker-compose.yaml up -d
 ```
-Até finalizar
+
+### **Criar Usuário no Airflow**  
+```bash
+docker compose run airflow-webserver airflow users create --role Admin \
+  --username airflow --email airflow@example.com \
+  --firstname airflow --lastname airflow --password airflow
 ```
 
-Termine com um exemplo de como obter dados do sistema ou como usá-los para uma pequena demonstração.
+---
+
+## 🌐 Conexões
+
+|        Application        |URL                          |Credentials                         |
+|----------------|-------------------------------|-----------------------------|
+|Airflow| [http://localhost:8085](http://localhost:8085) | ``` User: airflow``` <br> ``` Pass: airflow``` |         |
+|MinIO| [http://localhost:9001](http://localhost:9001) | ``` User: airflow``` <br> ``` Pass: airflowairflow``` |           |
+|Postgres| **Server/Database:** localhost:5432/airflow | ``` User: airflow``` <br> ``` Pass: airflow``` |           |
+|Spark (Master) | [http://localhost:8081](http://localhost:8081)|  |         |
 
 ## Ferramentas utilizadas
 
@@ -68,7 +82,6 @@ As seguintes ferramentas foram utilizadas no projeto:
 
 - [PostgreSQL](https://www.postgresql.org/) - Banco de dados relacional
 - [Apache Airflow](https://airflow.apache.org/) - Gerenciador de workflows
-- [Apache Nifi](https://nifi.apache.org/) - Automação de fluxo de dados
 - [Apache Spark](https://spark.apache.org/) - Processamento distribuído de dados
 - [MinIO](https://min.io/) - Armazenamento de objetos compatível com S3
 
@@ -107,3 +120,7 @@ Você também pode ver a lista de todos os [colaboradores](https://github.com/ma
 ## Licença
 
 Este projeto está sob a licença (sua licença) - veja o arquivo [LICENSE](https://github.com/marchingbeagle/pipeline-edd/blob/main/LICENSE) para detalhes.
+
+## Referências
+
+https://github.com/andrejnevesjr/airflow-spark-minio-postgres.git

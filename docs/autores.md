@@ -1,0 +1,4 @@
+- **Erik Schneider** - [(https://github.com/marchingbeagle)](https://github.com/marchingbeagle)
+- **Gabriel William** - [https://github.com/GabrielWDuarte](https://github.com/GabrielWDuarte)
+- **Dauane Neves** - [https://github.com/dauaneneves](https://github.com/dauaneneves)
+- **Gabriel Rodrigues** - [https://github.com/gabrieldorodrigues](https://github.com/gabrieldorodrigues)
