@@ -4,7 +4,6 @@ from airflow.operators.dummy_operator import DummyOperator
 from airflow.contrib.operators.spark_submit_operator import SparkSubmitOperator
 from datetime import datetime, timedelta
 
-# Get Spark connection from environment
 spark_conn = os.environ.get("spark_conn", "spark_conn")
 spark_master = "spark://spark:7077"
 
