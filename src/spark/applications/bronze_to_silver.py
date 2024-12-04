@@ -38,7 +38,6 @@ def process_pessoas(spark):
 def process_locacao(spark):
     df = spark.read.format("delta").load("s3a://bronze/locacao")
     
-    # Join with imovel and pessoas for enrichment
     df_imovel = spark.read.format("delta").load("s3a://bronze/imovel")
     df_pessoas = spark.read.format("delta").load("s3a://bronze/pessoas")
     
@@ -77,16 +76,13 @@ def process_table(spark, table_name):
     if table_name in processors:
         df_processed = processors[table_name](spark)
     else:
-        # Default processing for other tables
         df_processed = spark.read.format("delta").load(f"s3a://bronze/{table_name}") \
             .dropDuplicates()
     
-    # Add processing metadata
     df_final = df_processed \
         .withColumn("silver_processing_date", current_timestamp()) \
         .withColumn("silver_batch_id", date_format(current_timestamp(), "yyyyMMdd_HHmmss"))
     
-    # Write to silver
     df_final.write \
         .format("delta") \
         .mode("overwrite") \
