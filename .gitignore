@@ -10,8 +10,5 @@ site/
 
 # Virtual environments
 .venv
-<<<<<<< HEAD
 
 spark/
-=======
->>>>>>> c081d9b7167820bbb16e2c2ad1e52b829df9a66f
