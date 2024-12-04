@@ -47,7 +47,7 @@ start = DummyOperator(task_id="start", dag=dag)
 
 spark_job_load_postgres = SparkSubmitOperator(
     task_id="spark_job_load_postgres",
-    application="/usr/local/spark/applications/load-postgres.py",
+    application="/usr/local/spark/applications/load_postgres.py",
     name="load-postgres",
     conn_id=spark_conn,
     verbose=True,
