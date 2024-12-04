@@ -6,6 +6,9 @@ from pyspark.sql.types import DoubleType
 # Create spark session
 spark = (SparkSession
          .builder
+         .master("spark://spark:7077")  # Add explicit master URL
+         .appName("load-postgres")      # Add application name
+         .config("spark.jars", "/usr/local/spark/assets/jars/postgresql-42.2.6.jar")
          .getOrCreate()
          )
 
@@ -153,4 +156,3 @@ print("######################################")
     .mode("overwrite")
     .save()
 )
-
