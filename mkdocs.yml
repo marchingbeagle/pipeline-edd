@@ -1,12 +1,12 @@
 site_name: Projeto Engenharia de Dados - Pipeline de Aluguel de Imóveis
 nav:
   - Home: index.md
-  - Modelo Físico: modelo_fisico.md
-  - Dicionário de Dados: dicionario_dados.md
-  - Desenho de Arquitetura: arquitetura.md
+  - Arquitetura: dicionario_dados.md
   - Pré-requisitos: prerequisitos.md
   - Instalação: instalacao.md
   - Ferramentas: ferramentas.md
+  - Processos realizados nas DAGs: ProcessosDAGs.md
+  - Dashboard: dashboard.md
   - Colaboração: colaboracao.md
   - Autores: autores.md
   - Licença: licenca.md
