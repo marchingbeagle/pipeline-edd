@@ -219,51 +219,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../modelo_fisico/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Modelo Físico
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../dicionario_dados/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Dicionário de Dados
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../arquitetura/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Desenho de Arquitetura
+    Arquitetura
   </span>
   
 
@@ -368,15 +328,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#criar-usuario-no-airflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      Criar Usuário no Airflow
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -411,6 +362,46 @@
   
   <span class="md-ellipsis">
     Ferramentas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ProcessosDAGs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Processos realizados nas DAGs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dashboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dashboard
   </span>
   
 
@@ -531,15 +522,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#criar-usuario-no-airflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      Criar Usuário no Airflow
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -586,12 +568,6 @@ docker run -d -p 8000:8000 -p 9443:9443 --name portainer2 --restart=always \
 <h3 id="subir-docker-compose"><strong>Subir Docker-Compose</strong><a class="headerlink" href="#subir-docker-compose" title="Permanent link">&para;</a></h3>
 <pre><code class="language-bash">docker compose -f docker-compose.yaml up -d
 </code></pre>
-<h3 id="criar-usuario-no-airflow"><strong>Criar Usuário no Airflow</strong><a class="headerlink" href="#criar-usuario-no-airflow" title="Permanent link">&para;</a></h3>
-<pre><code class="language-bash">docker compose run airflow-webserver airflow users create --role Admin \
-  --username airflow --email airflow@example.com \
-  --firstname airflow --lastname airflow --password airflow
-</code></pre>
-<hr />
 <h2 id="conexoes">🌐 Conexões<a class="headerlink" href="#conexoes" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

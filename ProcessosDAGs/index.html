@@ -9,8 +9,10 @@
       
       
       
-        <link rel="prev" href="../autores/">
+        <link rel="prev" href="../ferramentas/">
       
+      
+        <link rel="next" href="../dashboard/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -18,7 +20,7 @@
     
     
       
-        <title>Licença - Projeto Engenharia de Dados - Pipeline de Aluguel de Imóveis</title>
+        <title>Processos realizados nas DAGs - Projeto Engenharia de Dados - Pipeline de Aluguel de Imóveis</title>
       
     
     
@@ -68,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#licenca" class="md-skip">
+        <a href="#landing-to-bronze" class="md-skip">
           Ir para o conteúdo
         </a>
       
@@ -104,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Licença
+              Processos realizados nas DAGs
             
           </span>
         </div>
@@ -294,10 +296,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../ProcessosDAGs/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Processos realizados nas DAGs
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -306,6 +328,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#principais-aspectos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais aspectos:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principais-recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais recursos:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -374,19 +434,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../licenca/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -395,7 +446,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -420,6 +470,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#principais-aspectos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais aspectos:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principais-recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais recursos:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -433,8 +509,101 @@
                   
 
 
-<h1 id="licenca">Licença<a class="headerlink" href="#licenca" title="Permanent link">&para;</a></h1>
-<p>Este projeto está sob a licença MIT - veja o arquivo <a href="https://github.com/marchingbeagle/pipeline-edd/blob/main/LICENSE">LICENSE</a> para detalhes.</p>
+<h1 id="landing-to-bronze">Landing to Bronze<a class="headerlink" href="#landing-to-bronze" title="Permanent link">&para;</a></h1>
+<p>Este trecho de código define os schemas (estruturas) das tabelas para o processo ETL <strong>landing-to-bronze</strong>.</p>
+<h3 id="principais-aspectos">Principais aspectos:<a class="headerlink" href="#principais-aspectos" title="Permanent link">&para;</a></h3>
+<p>Define 7 tabelas principais: <strong>estado</strong>, <strong>cidade</strong>, <strong>categoria</strong>, <strong>localizacao</strong>, <strong>imovel</strong>, <strong>locacao</strong>.<br />
+Cada tabela tem seus campos fortemente tipados.</p>
+<p>Este schema serve como base para validação e estruturação dos dados quando são movidos da camada landing para bronze, garantindo integridade e consistência dos dados.</p>
+<h3 id="principais-recursos">Principais recursos:<a class="headerlink" href="#principais-recursos" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Aplicação de tipo de dados</strong></li>
+<li><strong>Tratamento de valor nulo</strong></li>
+<li><strong>Padronização de texto</strong></li>
+<li><strong>Validação de campo obrigatória</strong></li>
+<li><strong>Rastreamento de linhagem</strong></li>
+<li><strong>Verificações de consistência de esquema</strong></li>
+</ul>
+<p>Isso garante a qualidade e a consistência dos dados ao passar da camada de destino para a camada bronze.</p>
+<hr />
+<h1 id="bronze-to-silver">Bronze to Silver<a class="headerlink" href="#bronze-to-silver" title="Permanent link">&para;</a></h1>
+<p>Este código implementa o processo ETL da camada bronze para silver, realizando transformações e enriquecimentos nos dados.</p>
+<h3 id="principais-funcoes">Principais Funções:<a class="headerlink" href="#principais-funcoes" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Funções de Limpeza</strong>:</li>
+<li><code>clean_cpf()</code>: Remove caracteres não numéricos do CPF</li>
+<li><code>clean_phone()</code>: Padroniza formato do telefone</li>
+<li>
+<p><code>validate_date()</code>: Valida e converte campos de data</p>
+</li>
+<li>
+<p><strong>Processamento por Tabela</strong>:</p>
+</li>
+<li><code>process_pessoas()</code>:    <ul>
+<li>Remove duplicatas por CPF</li>
+<li>Limpa CPF e telefone</li>
+<li>Padroniza nome em maiúsculo</li>
+<li>Valida data de nascimento</li>
+</ul>
+</li>
+<li><code>process_locacao()</code>:<ul>
+<li>Enriquece dados com joins em imovel e pessoas</li>
+<li>Filtra contratos com valor válido</li>
+<li>Valida data de vigência</li>
+</ul>
+</li>
+<li><code>process_imovel()</code>:<ul>
+<li>Join com localizacao</li>
+<li>Valida preços de compra e aluguel</li>
+</ul>
+</li>
+</ol>
+<h3 id="principais-recursos_1">Principais recursos:<a class="headerlink" href="#principais-recursos_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Limpeza e padronização de dados</strong></li>
+<li><strong>Remoção de duplicatas</strong></li>
+<li><strong>Validação de regras de negócio</strong></li>
+<li><strong>Enriquecimento via joins</strong></li>
+<li><strong>Rastreamento com metadados</strong></li>
+<li><strong>Tratamento de erros</strong></li>
+<li><strong>Validações específicas por domínio</strong></li>
+</ul>
+<p>Isso garante que os dados na camada silver estejam limpos, enriquecidos e prontos para análise, seguindo regras de negócio específicas para cada domínio.</p>
+<hr />
+<h1 id="silver-to-gold">Silver to Gold<a class="headerlink" href="#silver-to-gold" title="Permanent link">&para;</a></h1>
+<p>Este trecho de código implementa a execução principal do processo ETL da camada silver para gold, realizando a criação do modelo dimensional e views analíticas.</p>
+<h3 id="principais-aspectos_1">Principais aspectos:<a class="headerlink" href="#principais-aspectos_1" title="Permanent link">&para;</a></h3>
+<p>Define 3 etapas principais de processamento:
+1. <strong>Criação das dimensões e fatos</strong>
+2. <strong>Persistência das tabelas dimensionais</strong>
+3. <strong>Geração de views analíticas e KPIs</strong></p>
+<h3 id="fluxo-de-execucao">Fluxo de execução:<a class="headerlink" href="#fluxo-de-execucao" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Cria tabelas dimensionais:</li>
+<li><code>dim_localizacao</code></li>
+<li><code>dim_pessoas</code></li>
+<li>Cria tabela fato:</li>
+<li><code>fact_locacao</code></li>
+<li>Persiste em formato Delta:</li>
+<li>Salva dimensões</li>
+<li>Salva fatos</li>
+<li>Gera views analíticas</li>
+<li>Gera KPIs</li>
+</ol>
+<h3 id="principais-recursos_2">Principais recursos:<a class="headerlink" href="#principais-recursos_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Tratamento de exceções</strong></li>
+<li><strong>Gerenciamento de sessão Spark</strong></li>
+<li><strong>Persistência em Delta Lake</strong></li>
+<li><strong>Logging de execução</strong></li>
+<li><strong>Cleanup automático de recursos</strong></li>
+</ul>
+<p>Isso garante:
+- <strong>Execução confiável do processo</strong>
+- <strong>Rastreabilidade de erros</strong>
+- <strong>Gestão adequada de recursos</strong>
+- <strong>Consistência dos dados na camada gold</strong>
+- <strong>Disponibilidade para consumo em dashboards</strong></p>
 
 
 
