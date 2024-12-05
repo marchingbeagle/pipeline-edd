@@ -19,16 +19,6 @@ docker run -d -p 8000:8000 -p 9443:9443 --name portainer2 --restart=always \
 docker compose -f docker-compose.yaml up -d
 ```
 
-### **Criar Usuário no Airflow**
-
-```bash
-docker compose run airflow-webserver airflow users create --role Admin \
-  --username airflow --email airflow@example.com \
-  --firstname airflow --lastname airflow --password airflow
-```
-
----
-
 ## 🌐 Conexões
 
 |        Application        |URL                          |Credentials                         |
